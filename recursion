@@ -97,3 +97,22 @@ class Main {
         }
     }
 }
+check is the string is palindrome///
+
+import java.util.*;
+class Main {
+    public static boolean isPalindrome(String n,int left,int right){
+        if(left>=right){
+            return true;
+        }
+        if(n.charAt(left)!=n.charAt(right)){
+            return false;
+        }
+        return isPalindrome(n,left+1,right-1);
+    }
+    public static void main(String[] args) {
+        String n="madamsa";
+        int m=n.length();
+        System.out.print(isPalindrome(n,0,m-1));
+    }
+}
