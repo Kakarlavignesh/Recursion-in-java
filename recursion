@@ -21,3 +21,28 @@ class Main {
         System.out.println(Add.add(arr, 0));
     }
 }
+
+max elemnt in an array..//
+
+class Main {
+
+    static int max(int[] arr, int index) {
+
+        // Base case
+        if (index == arr.length - 1)
+            return arr[index];
+
+        // Get maximum from remaining array
+        int maxFromRest = max(arr, index + 1);
+
+        // Compare current element with maximum of remaining elements
+        return Math.max(arr[index], maxFromRest);
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {5, 2, 9, 1, 7};
+
+        System.out.println(max(arr, 0));
+    }
+}
