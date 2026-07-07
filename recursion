@@ -1,0 +1,23 @@
+Recursion from scratch..//
+import java.util.*;
+
+class Add {
+
+    static int add(int[] arr, int index) {
+
+        if (index == arr.length)
+            return 0;
+
+        return arr[index] + add(arr, index + 1);
+    }
+}
+
+class Main {
+
+    public static void main(String[] args) {
+
+        int[] arr = {2, 4, 6, 8};
+
+        System.out.println(Add.add(arr, 0));
+    }
+}
