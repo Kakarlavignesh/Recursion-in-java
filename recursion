@@ -46,3 +46,28 @@ class Main {
         System.out.println(max(arr, 0));
     }
 }
+
+Count the even numbers...
+
+// int[] arr = {2, 4, 6, 8};
+// Expected output:
+// 4
+
+import java.util.*;
+class Main {
+    static int even(int[] arr,int index){
+        if(index==arr.length){
+            return 0;
+        }
+        if(arr[index]%2==0){
+            return 1+even(arr,index+1);
+        }
+        else{
+            return even(arr,index+1);
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={2,4,6,8};
+        System.out.println(even(arr,0));
+    }
+}
