@@ -116,3 +116,20 @@ class Main {
         System.out.print(isPalindrome(n,0,m-1));
     }
 }
+
+Prime number using the recursion...
+
+class Main {
+    static boolean isPrime(int n,int i) {
+        if(i==n){
+            return true;
+        }
+        if(n%i==0){
+            return false;
+        }
+        return isPrime(n,i+1);
+    }
+    public static void main(String[] args) {
+        System.out.println(isPrime(47,2));
+    }
+}
