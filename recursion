@@ -219,3 +219,28 @@ import java.util.*;class Main {
         subsequence(arr,0,new ArrayList<>(),0,5);
     }
 }
+
+first sub sequence of target sum..
+
+import java.util.*;
+class Main {
+    public static boolean subsequence(int[] arr,int index,ArrayList<Integer>current,int sum,int target){
+        if(index==arr.length){
+            if(sum==target){
+                System.out.println(current);
+                return true;}
+            return false;}
+        current.add(arr[index]);
+        sum+=arr[index];
+        if(subsequence(arr,index+1,current,sum,target)){
+            return true;}
+        current.remove(current.size()-1);
+        sum-=arr[index];
+        if(subsequence(arr,index+1,current,sum,target)){
+            return true;
+        }return false;}
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,5};
+        subsequence(arr,0,new ArrayList<>(),0,5);
+    }
+}
