@@ -270,3 +270,30 @@ class Main {
         System.out.println(count(arr,0,new ArrayList<>(),0,3));
     }
 }
+Combination sum I...//
+
+import java.util.*;
+class Main {
+    public static void sub(int[] arr,int index,ArrayList<Integer>current,int sum,int target){
+            if(target==sum){
+                System.out.println(current);
+                return;
+            }
+            if(sum>target){
+                return;
+            }
+            if(index==arr.length){
+                return;
+            }
+        current.add(arr[index]);
+        sum+=arr[index];
+        sub(arr,index,current,sum,target);
+        current.remove(current.size()-1);
+        sum-=arr[index];
+        sub(arr,index+1,current,sum,target);
+    }
+    public static void main(String[] args) {
+        int[] arr={2,3,6,7};
+        sub(arr,0,new ArrayList<>(),0,9);
+    }
+}
