@@ -244,3 +244,29 @@ class Main {
         subsequence(arr,0,new ArrayList<>(),0,5);
     }
 }
+count the no of subsequences with the target sum..//
+
+import java.util.*;
+class Main {
+    public static int count(int[] arr,int index,ArrayList<Integer>current,int sum,int target){
+        if(index==arr.length){
+            if(sum==target){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+        current.add(arr[index]);
+        sum+=arr[index];
+        int take=count(arr,index+1,current,sum,target);
+        current.remove(current.size()-1);
+        sum-=arr[index];
+        int dont=count(arr,index+1,current,sum,target);
+        return take+dont;
+    }
+    public static void main(String[] args) {
+        int[] arr={1,2,3};
+        System.out.println(count(arr,0,new ArrayList<>(),0,3));
+    }
+}
