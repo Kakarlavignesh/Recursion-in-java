@@ -297,3 +297,55 @@ class Main {
         sub(arr,0,new ArrayList<>(),0,9);
     }
 }
+
+Combination sumII...//
+
+// int[] arr = {10, 1, 2, 7, 6, 1, 5};
+// int target = 8;
+
+import java.util.*;
+class Main {
+    public static void sub(int[] arr,int index,ArrayList<Integer>current,int sum,int target){
+        if(sum==target){
+            System.out.println(current);
+            return;
+        }
+        if(sum>target){
+            return;
+        }
+        if(index==arr.length){
+            return;
+        }
+        current.add(arr[index]);
+        sum+=arr[index];
+        sub(arr,index+1,current,sum,target);
+        current.remove(current.size()-1);
+        sum-=arr[index];
+        while(index+1<arr.length && arr[index]==arr[index+1]){
+            index++;
+        }
+        sub(arr,index+1,current,sum,target);
+    }
+    public static void main(String[] args) {
+        int[] arr = {10, 1, 2, 7, 6, 1, 5};
+        Arrays.sort(arr);
+        sub(arr,0,new ArrayList<>(),0,8);
+    }
+}
+// [1,1,6]
+// [1,2,5]
+// [1,7]
+// [2,6]
+
+
+
+
+
+
+
+
+
+
+
+
+
