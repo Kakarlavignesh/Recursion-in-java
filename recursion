@@ -197,3 +197,25 @@ class Main {
         subsequence(arr,0,new ArrayList<>());
     }
 }
+
+subsequence with a particular target...
+
+import java.util.*;class Main {
+    public static void subsequence(int[] arr,int index,ArrayList<Integer>current,int sum,int target){
+        if(index==arr.length){
+            if(sum==target){
+                System.out.println(current);
+            }
+            return;}
+        current.add(arr[index]);
+        sum+=arr[index];
+        subsequence(arr,index+1,current,sum,target);
+        current.remove(current.size()-1);
+        sum-=arr[index];
+        subsequence(arr,index+1,current,sum,target);
+    }
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,5};
+        subsequence(arr,0,new ArrayList<>(),0,5);
+    }
+}
