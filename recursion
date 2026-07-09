@@ -355,8 +355,37 @@ class Main {
         subsequence(s,0,new StringBuilder());
     }
 }
+subsets without suplicates...
 
-
+import java.util.*;
+class Main {
+    public static void swap(int[] arr,int i,int j){
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    public static void permute(int[] arr,int index){
+        if(arr.length==index){
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        HashSet<Integer> set=new HashSet<>();
+        for(int i=index;i<arr.length;i++){
+            if(set.contains(arr[i])){
+                continue;
+            }
+            set.add(arr[i]);
+            swap(arr,index,i);
+            permute(arr,index+1);
+            swap(arr,index,i);
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={1,1,2};
+        Arrays.sort(arr);
+        permute(arr,0);
+    }
+}
 
 
 
