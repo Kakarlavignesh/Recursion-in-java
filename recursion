@@ -412,8 +412,41 @@ class Main {
         solve(digits,0,new StringBuilder());
     }
 }
+palindromic partitioning..
 
-
+import java.util.*;
+class Main {
+    public static boolean isPalin(String s){
+        int i=0;
+        int j=s.length()-1;
+        while(i<j){
+            if(s.charAt(i)!=s.charAt(j)){
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+    public static void solve(String s,int index,ArrayList<String> current){
+        if(index==s.length()){
+            System.out.println(current);
+            return;
+        }
+        for(int i=index;i<s.length();i++){
+            String part=s.substring(index,i+1);
+            if(isPalin(part)){
+                current.add(part);
+                solve(s,i+1,current);
+                current.remove(current.size()-1);
+            }
+        }
+    }
+    public static void main(String[] args) {
+        String s="aab";
+        solve(s,0,new ArrayList<>());
+    }
+}
 
 
 
