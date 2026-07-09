@@ -336,8 +336,25 @@ class Main {
 // [1,2,5]
 // [1,7]
 // [2,6]
+Subsequences..//
 
-
+import java.util.*;
+class Main {
+    public static void subsequence(String s,int index,StringBuilder sb){
+        if(index==s.length()){
+            System.out.println(sb);
+            return;
+        }
+        sb.append(s.charAt(index));
+        subsequence(s,index+1,sb);
+        sb.deleteCharAt(sb.length()-1);
+        subsequence(s,index+1,sb);
+    }
+    public static void main(String[] args) {
+        String s="abc";
+        subsequence(s,0,new StringBuilder());
+    }
+}
 
 
 
