@@ -387,7 +387,31 @@ class Main {
     }
 }
 
+letter perinting using a number..
 
+import java.util.*;
+class Main {
+    static String[] map = {
+        "", "", "abc", "def", "ghi",
+        "jkl", "mno", "pqrs", "tuv", "wxyz"
+    };
+    public static void solve(String digits,int index,StringBuilder sb){
+        if(digits.length()==index){
+            System.out.println(sb.toString());
+            return;
+        }
+        String letters=map[digits.charAt(index)-'0'];
+        for(int i=0;i<letters.length();i++){
+            sb.append(letters.charAt(i));
+            solve(digits,index+1,sb);
+            sb.deleteCharAt(sb.length()-1);
+        }
+    }
+    public static void main(String[] args) {
+        String digits="67";
+        solve(digits,0,new StringBuilder());
+    }
+}
 
 
 
