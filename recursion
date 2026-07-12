@@ -592,6 +592,223 @@ class Main {
     }
 }
 
+recursion.... revision..
+
+recursion revision...??
+
+SUm of first n numbers...
+
+import java.util.*;
+class Main {
+    public static void numbers(int n,int ans){;
+        if(n==0){
+            System.out.println(ans);
+            return;
+        }
+        numbers(n-1,ans+n);
+    }
+    public static void main(String[] args) {
+        numbers(6,0);
+    }
+}
+
+reverse an array..
+
+import java.util.*;
+class Main {
+    public static void reverse(int[] arr,int i,int j){
+        if(i>=j){
+            return;
+        }
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+        reverse(arr,i+1,j-1);
+    }
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,5};
+        int n=arr.length;
+        reverse(arr,0,n-1);
+        for(int i=0;i<n;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+
+factorial of a number..
+
+class Main {
+    public static int fact(int n){
+        if(n==0){
+            return 1;
+        }
+        return n*fact(n-1);
+    }
+    public static void main(String[] args) {
+        System.out.println(fact(5));
+    }
+}
+
+check string palindrome..
+
+import java.util.*;
+class Main {
+    public static boolean palindrome(String s,int i,int j){
+        if(i>=j){
+            return true;
+        }
+        if(s.charAt(i)!=s.charAt(j)){
+            return false;
+        }
+        return palindrome(s,i+1,j-1);
+        }
+    public static void main(String[] args) {
+        String s="madam";
+        System.out.print(palindrome(s,0,s.length()-1));
+    }
+}
+
+fibonacci series..
+
+import java.util.*;
+class Main {
+    public static int recursion(int n){
+        if(n<=1){
+            return n;
+        }
+       return recursion(n-1)+recursion(n-2);
+    }
+    public static void main(String[] args) {
+        int n=5;
+        for(int i=1;i<=n;i++){
+            System.out.println(recursion(i)+" ");
+        }
+    }
+}
+
+power of a number ...
+
+import java.util.*;
+class Main {
+    public static int power(int m,int n){
+        if(n==0){
+            return 1;
+        }
+        return m*power(m,n-1);
+    }
+    public static void main(String[] args) {
+        System.out.println(power(2,5));
+    }
+}
+
+primenumber ...
+
+import java.util.*;
+class Main {
+    public static boolean isPrime(int n,int i){
+        if(n<=1){
+            return true;
+        }
+        if(i*i>n){
+            return true;
+        }
+        if(n%i==0){
+            return false;
+        }
+        return isPrime(n,i+1);
+    }
+    public static void main(String[] args) {
+        System.out.println(isPrime(53,2));
+    }
+}
+
+array sorted or not...
+
+import java.util.*;
+class Main {
+    public static boolean sorted(int[] arr,int index){
+        if(arr.length-1==index){
+            return true;
+        }
+        if(arr[index]>arr[index+1]){
+            return false;
+        }
+        return sorted(arr,index+1);
+    }
+    public static void main(String[] args) {
+        int[] arr={1,2,3,4,5};
+        int n=arr.length;
+        System.out.print(sorted(arr,0));
+    }
+}
+
+count of digits..
+
+import java.util.*;
+class Main {
+    public static int count(int m){
+        if(m==0){
+            return 0;
+        }
+        return 1+count(m/10);
+    }
+    public static void main(String[] args) {
+        System.out.println(count(234));
+    }
+}
+
+sum of the digits..
+
+import java.util.*;
+class Main {
+    public static int sum(int m){
+        if(m==0){
+            return 0;
+        }
+        int ans=0;
+        return m%10+sum(m/10);
+    }
+    public static void main(String[] args) {
+        System.out.println(sum(234));
+    }
+}
+
+reverse of a number
+
+import java.util.*;
+class Main {
+    public static int reverse(int m,int rev){
+        if(m==0){
+            return rev;
+        }
+        return reverse(m/10,rev*10+m%10);
+    }
+    public static void main(String[] args) {
+        System.out.println(reverse(1234,0));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
